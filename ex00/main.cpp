@@ -52,11 +52,40 @@ int			main()
 	std::cout << "---------- deque test ------------" << std::endl;
 	{
 		std::deque<std::string> deq;
+
+		deq.push_front("hello");
+		deq.push_back("world");
+		deq.push_front("what");
+		deq.push_back("are");
+		deq.push_back("you");
+		deq.push_front("doing");
+		try
+		{
+			if (easyfind(deq, "hello") == deq.end())
+				throw WrongContainer();
+			std::cout << "find hello : ";
+			std::cout << *easyfind(deq, "hello") << std::endl;
+		}
+		catch (std::exception &e)
+		{
+			std::cout << e.what() << std::endl;
+		}
+	}
+	std::cout << "----------- Empty container test ------------" << std::endl;
+	{
+		std::vector<int> vt;
 		
-		if (easyfind(deq, "hello") == deq.end())
-			throw WrongContainer();
-		std::cout << "find hello : " << std::endl;
-		std::cout << *easyfind(deq, "hello") << std::endl;
+		try
+		{
+			if (easyfind(vt, 5) == vt.end())
+				throw WrongContainer();
+			std::cout << "find 5 : ";
+			std::cout << *easyfind(vt, 5) << std::endl;
+		}
+		catch (std::exception &e)
+		{
+			std::cout << e.what() << std::endl;
+		}
 	}
 	return (0);
 }
