@@ -7,8 +7,10 @@ int main()
 		MutantStack<int> mstack;
 		mstack.push(5);
 		mstack.push(17);
+		std::cout << "top :";
 		std::cout << mstack.top() << std::endl;
 		mstack.pop();
+		std::cout << "size :";
 		std::cout << mstack.size() << std::endl;
 		mstack.push(3);
 		mstack.push(5);
@@ -42,6 +44,13 @@ int main()
 			iter++;
 		}
 		std::cout << std::endl;
+		std::cout << "top : ";
+		std::cout << cstack.top() << std::endl;
+		cstack.pop();
+		cstack.pop();
+		cstack.pop();
+		std::cout << "top : ";
+		std::cout << cstack.top() << std::endl;
 	}
 	return 0;
 }
